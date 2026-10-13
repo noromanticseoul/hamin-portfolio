@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamin Park — Brand Marketer</title>
+<meta name="description" content="Hamin Park, Brand Marketer based in Seoul. Fashion, publishing and brand experience work.">
+<style>
+@font-face{font-family:"Pretendard Variable";font-weight:45 920;font-style:normal;font-display:swap;src:url("fonts/PretendardVariable.woff2") format("woff2-variations"),url("fonts/PretendardVariable.woff2") format("woff2")}
+:root{
+  --paper:#f3f2ee;
+  --ink:#111111;
+  --ink-2:#555555;
+  --ink-3:#8a8a86;
+  --rule:#cfcdc6;
+  --accent:#2b46ff;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Helvetica Neue",Arial,sans-serif;
+  --mono:var(--sans);
+  --pad:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--accent)}
+ul,ol{list-style:none}
+
+/* language switch */
+html:not([data-lang="ko"]) [lang="ko"]{display:none!important}
+html[data-lang="ko"] [lang="en"]{display:none!important}
+html[data-lang="ko"] body{letter-spacing:-.01em}
+
+.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-3)}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--ink)}
+.top-in{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:center;padding:14px var(--pad)}
+.top .name{font-weight:600;text-decoration:none;font-size:15px}
+.top nav{display:flex;gap:22px}
+.top nav a{text-decoration:none}
+.lang{display:flex;gap:2px}
+.lang button{font:inherit;font-family:var(--mono);font-size:12px;background:none;border:1px solid transparent;color:var(--ink-3);padding:3px 7px;cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+
+/* blocks */
+.block{padding:72px var(--pad);border-bottom:1px solid var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.label{grid-column:1/4}
+.body{grid-column:4/13}
+
+/* intro */
+.intro{padding-top:56px}
+.intro h1{grid-column:1/10;font-size:clamp(32px,4.6vw,60px);font-weight:500;line-height:1.08;letter-spacing:-.025em}
+html[data-lang="ko"] .intro h1{line-height:1.2}
+.intro .photo{grid-column:11/13;grid-row:1/3;align-self:start}
+.intro .photo img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(.15)}
+.intro .summary{grid-column:1/9;margin-top:36px;font-size:18px;color:var(--ink-2);max-width:720px}
+.facts{grid-column:1/13;margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+.facts div{padding:14px 16px 0 0}
+.facts dd{margin-top:6px;font-size:15px}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px}
+.caps h3{font-size:15px;font-weight:600}
+.caps p{font-size:14px;color:var(--ink-2);margin-top:6px}
+
+/* numbers */
+.hl{display:grid;border-top:1px solid var(--ink);margin:0 0 40px}
+.hl>div{display:grid;grid-template-columns:160px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.hl dt{font-weight:600;font-size:16px}
+.hl dd{margin:0;display:flex;flex-direction:column;gap:6px}
+.hl dd a{font-size:clamp(17px,1.6vw,20px);letter-spacing:-.01em;color:var(--ink);text-decoration:none;line-height:1.35}
+.hl dd a::after{content:" →";color:var(--ink-3)}
+.hl dd a:hover{color:var(--accent)}
+@media (max-width:600px){.hl>div{grid-template-columns:1fr;gap:6px}}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+.nums div{padding:18px 16px 4px 0;border-right:1px solid var(--rule);padding-left:16px}
+.nums div:first-child{padding-left:0}
+.nums div:last-child{border-right:0}
+.nums b{display:block;font-size:clamp(28px,3.4vw,44px);font-weight:500;letter-spacing:-.03em;line-height:1}
+.nums span{display:block;margin-top:10px;font-size:13px;color:var(--ink-2)}
+
+/* experience table */
+.exp li{display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;padding:14px 0;border-top:1px solid var(--rule)}
+.exp li:last-child{border-bottom:1px solid var(--rule)}
+.exp .co{font-weight:600}
+
+/* project index */
+.index li a{display:grid;grid-template-columns:48px 1.4fr 1fr 1fr;gap:24px;padding:12px 0;border-top:1px solid var(--rule);text-decoration:none}
+.index li:last-child a{border-bottom:1px solid var(--rule)}
+.index li a:hover{color:var(--accent)}
+.index .n{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:3px}
+
+/* case study */
+.case .head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.case .head .n{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.case h2{font-size:clamp(26px,3vw,38px);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.case .meta{margin-top:28px;display:grid;gap:16px;align-content:start}
+.case .meta dd{font-size:14px;margin-top:3px}
+.case .text{font-size:16px}
+.case .text h4{font-family:var(--mono);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.02em;color:var(--ink-3);margin:26px 0 8px}
+.case .text h4:first-child{margin-top:0}
+.case .text ul li{position:relative;padding-left:16px;margin-top:6px;color:var(--ink-2)}
+.case .text ul li::before{content:"–";position:absolute;left:0;color:var(--ink-3)}
+.outcome{font-size:clamp(18px,1.8vw,22px);font-weight:500;letter-spacing:-.01em;line-height:1.35}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
+.imgs{display:grid;gap:12px;margin-top:36px}
+.imgs.c2{grid-template-columns:repeat(2,1fr)}
+.imgs.c3{grid-template-columns:repeat(3,1fr)}
+.imgs.c4{grid-template-columns:repeat(4,1fr)}
+.imgs.c5{grid-template-columns:repeat(5,1fr)}
+.imgs img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#e4e2dc;cursor:zoom-in}
+.imgs.land img{aspect-ratio:16/10}
+.imgs video{width:100%;aspect-ratio:3/4;object-fit:cover;background:#111;display:block}
+.media:empty{display:none}
+.imgs.wide{display:flex;gap:12px;margin-top:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:thin}
+.imgs.wide img{flex:0 0 auto;width:auto;height:clamp(180px,24vw,280px);aspect-ratio:auto;object-fit:contain;background:none;scroll-snap-align:start}
+.imgs.press{margin-top:16px}
+.skills{display:grid;gap:0;border-top:1px solid var(--rule)}
+.skills>div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.skills dt{font-size:11px;letter-spacing:.07em;text-transform:uppercase;padding-top:3px}
+.skills dd{margin:0;font-size:16px;line-height:1.5}
+.imgs.press img{aspect-ratio:4/3}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+/* placeholder (GF Fashion) */
+.slot{position:relative;aspect-ratio:3/4;border:1px dashed var(--ink-3);background:center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--ink-3);font-family:var(--mono);font-size:11px;text-transform:uppercase;text-align:center;padding:8px}
+.slot.big{grid-column:span 2;aspect-ratio:auto}
+.slot.filled{border:0}
+.slot.filled>*{display:none}
+.todo{color:var(--ink-3)!important}
+.brandtags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.brandtags span{font-family:var(--mono);font-size:11px;text-transform:uppercase;border:1px solid var(--ink);padding:3px 8px}
+
+/* other work */
+.other li{display:grid;grid-template-columns:1.2fr 2fr 1fr;gap:24px;padding:16px 0;border-top:1px solid var(--rule)}
+.other li:last-child{border-bottom:1px solid var(--rule)}
+.other h3{font-size:16px;font-weight:600}
+.other p{font-size:14px;color:var(--ink-2)}
+.other li>.media{grid-column:1/-1;margin-top:4px}
+
+/* photography */
+.photos{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.photos img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;cursor:zoom-in;background:#e4e2dc}
+.photos .w2{grid-column:span 2}
+.photos .w2 img{aspect-ratio:auto;height:100%}
+.photos figure{grid-column:span 1}
+
+/* contact */
+.contact dl{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact dd{font-size:clamp(16px,1.6vw,20px);margin-top:6px;overflow-wrap:anywhere}
+.contact dd a{text-decoration:none}
+footer{padding:20px var(--pad);display:flex;justify-content:space-between;gap:16px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(17,17,17,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:24px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%}
+
+
+
+/* career overview */
+.hint{font-size:13px;margin-top:8px}
+.career>li{border-top:1px solid var(--rule)}
+.career>li:last-child{border-bottom:1px solid var(--rule)}
+.career .row{display:grid;grid-template-columns:150px 140px 1fr 24px;gap:20px;align-items:baseline;padding:16px 0;text-decoration:none}
+.career .row:hover .co,.career .row:hover .go{color:var(--accent)}
+.career .co{font-size:18px;font-weight:600}
+.career .what{color:var(--ink-2)}
+.career .go{color:var(--ink-3);transition:transform .2s}
+.career .row:hover .go{transform:translateX(3px)}
+.subs{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 16px 330px}
+.subs a{font-size:13px;text-decoration:none;border:1px solid var(--rule);padding:4px 10px 4px 8px;display:inline-flex;gap:6px;align-items:baseline}
+.subs a:hover{border-color:var(--accent)}
+.subs .n,.toc .n{font-size:10px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.case,#other,#photography{scroll-margin-top:56px}
+
+
+/* GF Fashion brand blocks */
+.case .text .brand-h{font-size:20px;font-weight:600;letter-spacing:-.01em;margin:44px 0 0;padding-top:18px;border-top:1px solid var(--rule)}
+.proj{display:grid;margin-top:10px}
+.proj-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.proj-row:last-child{border-bottom:0}
+.proj-row b{font-weight:600;font-size:16px}
+.proj-row p{color:var(--ink-2);font-size:15px;margin-top:4px}
+@media (max-width:600px){.proj-row{grid-template-columns:1fr;gap:4px}}
+
+/* mini table of contents for the details section */
+.toc{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:15;width:132px;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc.show{opacity:1;pointer-events:auto}
+.toc>p{margin-bottom:10px}
+.toc ol{border-left:1px solid var(--rule)}
+.toc li a{display:flex;gap:8px;align-items:baseline;padding:4px 0 4px 12px;margin-left:-1px;border-left:2px solid transparent;font-size:12px;color:var(--ink-3);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toc li a:hover{color:var(--ink)}
+.toc li a.on{color:var(--ink);border-left-color:var(--ink);font-weight:600}
+.toc .totop{display:inline-block;margin-top:14px;text-decoration:none;color:var(--ink-3)}
+@media (min-width:1101px){#details .block{padding-right:calc(var(--pad) + 150px)}}
+@media (max-width:1100px){
+  .toc{top:auto;bottom:16px;right:16px;transform:none;width:auto;background:var(--paper);border:1px solid var(--ink);padding:6px 8px}
+  .toc>p,.toc .totop{display:none}
+  .toc ol{border:0;display:flex;gap:2px}
+  .toc li a{padding:0;border:0;margin:0}
+  .toc li a>span:not(.n){display:none}
+  .toc li a .n{font-size:11px;padding:3px 5px;display:block}
+  .toc li a.on .n{color:var(--paper);background:var(--ink)}
+}
+
+/* edit mode (only visible with ?edit in the URL) */
+.ed-bar{position:fixed;left:16px;top:64px;z-index:60;display:none;gap:6px;font-family:var(--mono);font-size:11px;text-transform:uppercase}
+.ed-on .ed-bar{display:flex}
+.ed-bar button{font:inherit;background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:6px 10px;cursor:pointer}
+.ed-bar button.primary{background:var(--ink);color:var(--paper)}
+body.editing [contenteditable="true"]{outline:1px dashed rgba(43,70,255,.35);outline-offset:4px}
+body.editing [contenteditable="true"]:focus{outline:1px solid var(--accent)}
+body.editing .imgs img,body.editing .photos img,body.editing .photo img,body.editing .slot{outline:1px dashed var(--accent);outline-offset:-1px;cursor:copy}
+body.editing .media{display:grid;min-height:120px;border:1px dashed var(--accent);position:relative;padding:8px}
+body.editing .media:empty::before{content:"+ Drop images or video here";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.07em}
+body.editing .imgs video{outline:1px dashed var(--accent);outline-offset:-1px}
+#ed-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:70;background:var(--ink);color:var(--paper);font-size:13px;padding:10px 14px;max-width:calc(100% - 32px);opacity:0;pointer-events:none;transition:opacity .2s}
+#ed-toast.on{opacity:1}
+body.editing .paste-at{outline:2px solid var(--accent)!important;outline-offset:2px}
+body.editing .dropping{outline:2px solid var(--accent)!important;outline-offset:-2px}
+.ed-hint{display:none;position:fixed;left:16px;top:104px;z-index:60;max-width:320px;background:var(--ink);color:var(--paper);font-size:12px;line-height:1.5;padding:10px 12px}
+body.editing .ed-hint{display:block}
+.ed-del{position:absolute;top:6px;right:6px;width:22px;height:22px;border:0;background:var(--ink);color:var(--paper);font-size:14px;line-height:22px;cursor:pointer;display:none}
+body.editing .ed-wrap{position:relative}
+body.editing .ed-wrap:hover .ed-del{display:block}
+
+@media (max-width:900px){
+  .career .row{grid-template-columns:1fr 24px;gap:2px 12px}
+  .career .go{grid-column:2;grid-row:1/4;align-self:center}
+  .career .when,.career .co,.career .what{grid-column:1}
+  .career .what{font-size:14px}
+  .subs{padding-left:0}
+  .label,.body{grid-column:1/13}
+  .label{margin-bottom:20px}
+  .intro h1{grid-column:1/13}
+  .intro .photo{grid-column:1/5;grid-row:auto;margin-top:28px}
+  .intro .summary{grid-column:1/13}
+  .facts{grid-template-columns:repeat(2,1fr);row-gap:16px}
+  .caps{grid-template-columns:1fr 1fr}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .nums div:nth-child(2){border-right:0}
+  .nums div:nth-child(3){padding-left:0}
+  .exp li{grid-template-columns:1fr;gap:2px}
+  .index li a{grid-template-columns:36px 1fr;gap:4px 12px}
+  .index li a span:nth-child(n+3){grid-column:2;color:var(--ink-3);font-size:13px}
+  .other li{grid-template-columns:1fr;gap:4px}
+  .imgs.c3,.imgs.c4,.imgs.c5{grid-template-columns:repeat(2,1fr)}
+  .photos{grid-template-columns:repeat(2,1fr)}
+  .photos .w2{grid-column:span 2}
+  .contact dl{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .top nav{display:none}
+  .top-in{grid-template-columns:1fr auto}
+  .block{padding:56px var(--pad)}
+  .caps{grid-template-columns:1fr}
+  .slot.big{grid-column:span 2}
+}
+
+/* every gallery is one horizontal strip: original proportions, one shared height, scroll or drag sideways */
+.imgs,.photos,.imgs.wide{display:flex;flex-wrap:nowrap;gap:12px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:thin;container-type:inline-size;cursor:grab}
+.imgs.dragging,.photos.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.imgs>*,.photos>figure,.photos>figure.w2{flex:0 0 auto;margin:0;min-width:0}
+.imgs img,.imgs video,.imgs .slot,.photos img,.photos .w2 img,.imgs.wide img,.imgs.land img,.imgs.press img{display:block;flex:0 0 auto;height:max(150px,calc((100cqw - 24px) * .2083));width:auto;max-width:none;aspect-ratio:auto;object-fit:contain;background:none;scroll-snap-align:start;-webkit-user-drag:none;user-select:none}
+.imgs .slot{aspect-ratio:3/4}
+.imgs .slot.big{aspect-ratio:4/3}
+.intro .photo img{aspect-ratio:auto}
+.imgs video{height:clamp(320px,36vw,440px);background:#111}
+body.editing .media{display:flex;min-height:120px}
+body.editing .imgs,body.editing .photos{cursor:auto}
+.imgs .ed-wrap,.photos .ed-wrap{display:block;flex:0 0 auto}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="name" href="#top">Hamin Park <span class="muted" style="font-weight:400">박하민</span></a>
+    <nav class="mono">
+      <a href="#overview"><span lang="en">Overview</span><span lang="ko">경력 요약</span></a>
+      <a href="#p-gf"><span lang="en">Details</span><span lang="ko">상세 내역</span></a>
+      <a href="#photography"><span lang="en">Photography</span><span lang="ko">사진</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="ko">연락처</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+<!-- ================= INTRO ================= -->
+<section class="block intro" id="top">
+  <div class="grid" id="about">
+    <h1>
+      <span lang="en">Brand marketer working across fashion retail, independent publishing and brand experience.</span>
+      <span lang="ko">패션 리테일, 독립 출판, 브랜드 경험 분야에서 일해 온 브랜드 마케터입니다.</span>
+    </h1>
+    <!-- 프로필 사진: images/profile.jpg 파일을 바꾸면 교체됩니다 -->
+    <figure class="photo"><img src="images/profile.jpg" alt="Hamin Park"></figure>
+    <p class="summary">
+      <span lang="en">Most recently a marketer at GF Fashion, the Korean distributor of C.P. Company, Palm Angels and BEAMS. Before that, marketing at AROUND, a lifestyle magazine, where I ran offline activations, CRM newsletters and social video end to end. I plan, produce (photo and video) and measure my own work.</span>
+      <span lang="ko">최근 C.P. Company, Palm Angels, BEAMS의 국내 전개사 GF Fashion에서 마케터로 근무했습니다. 그 전에는 라이프스타일 매거진 AROUND에서 오프라인 프로젝트, CRM 뉴스레터, SNS 영상을 기획부터 운영까지 담당했습니다. 기획, 사진·영상 제작, 성과 측정까지 직접 합니다.</span>
+    </p>
+    <dl class="facts">
+      <div><dt class="mono muted">Email</dt><dd><a href="mailto:qkrgkals0309@naver.com">qkrgkals0309@naver.com</a></dd></div>
+      <div><dt class="mono muted"><span lang="en">Phone</span><span lang="ko">전화</span></dt><dd><a href="tel:+821059240359"><span lang="en">+82 10 5924 0359</span><span lang="ko">010-5924-0359</span></a></dd></div>
+      <div><dt class="mono muted">Instagram</dt><dd><a href="https://www.instagram.com/vit___hamin/" target="_blank" rel="noopener">@vit___hamin</a></dd></div>
+      <div><dt class="mono muted"><span lang="en">Based in</span><span lang="ko">위치</span></dt><dd><span lang="en">Seoul, South Korea</span><span lang="ko">서울</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES + NUMBERS ================= -->
+<section class="block">
+  <div class="grid">
+    <p class="label mono"><span lang="en">Capabilities</span><span lang="ko">역량</span></p>
+    <div class="body">
+      <div class="caps">
+        <div><h3><span lang="en">Brand &amp; campaign marketing</span><span lang="ko">브랜드·캠페인 마케팅</span></h3><p><span lang="en">Campaigns, ambassadors, celebrity seeding and collaboration launches for international fashion brands in Korea.</span><span lang="ko">해외 패션 브랜드의 국내 캠페인, 앰버서더, 연예인 협찬, 콜라보 전개.</span></p></div>
+        <div><h3><span lang="en">Offline activations</span><span lang="ko">오프라인 프로젝트</span></h3><p><span lang="en">Pop-ups, fair booths and a revenue-generating studio space, from concept to operation.</span><span lang="ko">팝업, 박람회 부스, 수익형 공간까지 기획부터 운영.</span></p></div>
+        <div><h3><span lang="en">CRM &amp; newsletters</span><span lang="ko">CRM·뉴스레터</span></h3><p><span lang="en">Content planning, layout and performance tracking for subscriber growth.</span><span lang="ko">구독자 확대를 위한 콘텐츠 기획, 구성, 성과 관리.</span></p></div>
+        <div><h3><span lang="en">Social &amp; short-form video</span><span lang="ko">SNS·숏폼 영상</span></h3><p><span lang="en">Reels strategy, brand collaborations, shooting and editing.</span><span lang="ko">릴스 전략, 브랜드 협업, 촬영 및 편집.</span></p></div>
+        <div><h3><span lang="en">Brand identity</span><span lang="ko">브랜드 아이덴티티</span></h3><p><span lang="en">Positioning, identity planning and guidelines, working with designers.</span><span lang="ko">포지셔닝, 아이덴티티 기획, 가이드라인 (디자이너 협업).</span></p></div>
+        <div><h3><span lang="en">Photography</span><span lang="ko">사진</span></h3><p><span lang="en">Portrait, product and location shooting with retouching.</span><span lang="ko">인물, 제품, 풍경 촬영 및 보정.</span></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid" style="margin-top:64px">
+    <p class="label mono"><span lang="en">Tools &amp; languages</span><span lang="ko">툴·어학</span></p>
+    <div class="body">
+      <dl class="skills">
+        <div><dt class="mono muted"><span lang="en">Expert</span><span lang="ko">최상</span></dt><dd>Photoshop · Lightroom</dd></div>
+        <div><dt class="mono muted"><span lang="en">Advanced</span><span lang="ko">상</span></dt><dd>InDesign · Illustrator · Figma · Premiere Pro · Final Cut Pro · After Effects · <span lang="en">AI tools</span><span lang="ko">AI 툴 활용</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Languages</span><span lang="ko">어학</span></dt><dd><span lang="en">Korean (native) · English, TOEIC Speaking IH</span><span lang="ko">한국어 (모국어) · 영어 TOEIC Speaking IH</span></dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="grid" style="margin-top:64px">
+    <p class="label mono"><span lang="en">Selected results</span><span lang="ko">주요 성과</span></p>
+    <div class="body">
+      <dl class="hl">
+        <div><dt>BEAMS KOREA</dt><dd><a href="#p-gf"><span lang="en">Ran BEAMS' first official pop-up in Korea</span><span lang="ko">국내 첫 팝업 진행</span></a></dd></div>
+        <div><dt>C.P. Company</dt><dd><a href="#p-gf"><span lang="en">Launched the brand's first official Korea ambassador, RIIZE Sohee</span><span lang="ko">브랜드 첫 공식 앰버서더 RIIZE 소희 진행</span></a><a href="#p-gf"><span lang="en">Ran the garment-dyeing pop-up event</span><span lang="ko">가먼트 다잉 이벤트 진행</span></a></dd></div>
+        <div><dt>AROUND</dt><dd><a href="#p-studio"><span lang="en">Planned the Discovery Tales studio space</span><span lang="ko">‘발견담’ 공간 기획</span></a><a href="#p-fair"><span lang="en">Ran the Seoul International Book Fair pop-up</span><span lang="ko">서울국제도서전 팝업 진행</span></a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAREER OVERVIEW (요약 → 클릭하면 상세로 이동) ================= -->
+<section class="block" id="overview">
+  <div class="grid">
+    <div class="label"><p class="mono"><span lang="en">Career overview</span><span lang="ko">경력 요약</span></p><p class="hint muted"><span lang="en">Select a row to jump to the details.</span><span lang="ko">항목을 누르면 상세 내역으로 이동합니다.</span></p></div>
+    <div class="body">
+      <ol class="career">
+        <li>
+          <a class="row" href="#p-gf"><span class="when mono">2025.03 – 2026.08</span><span class="co">GF Fashion</span><span class="what"><span lang="en">Marketer · C.P. Company, Palm Angels, BEAMS KOREA</span><span lang="ko">마케터 · C.P. Company, Palm Angels, BEAMS KOREA</span></span><span class="go">→</span></a>
+        </li>
+        <li>
+          <a class="row" href="#p-fair"><span class="when mono">2024.01 – 2024.08</span><span class="co">AROUND</span><span class="what"><span lang="en">Marketer · Lifestyle magazine</span><span lang="ko">마케터 · 라이프스타일 매거진</span></span><span class="go">→</span></a>
+          <div class="subs"><a href="#p-fair"><span class="n">02</span><span lang="en">Book fair booth</span><span lang="ko">도서전 부스</span></a><a href="#p-studio"><span class="n">03</span><span lang="en">Discovery Tales studio</span><span lang="ko">작업실 발견담</span></a><a href="#p-social"><span class="n">04</span><span lang="en">Social &amp; Reels</span><span lang="ko">SNS·릴스</span></a><a href="#p-news"><span class="n">05</span><span lang="en">Newsletter</span><span lang="ko">뉴스레터</span></a></div>
+        </li>
+        <li>
+          <a class="row" href="#p-yulip"><span class="when mono">2023.09 – 2023.12</span><span class="co">YULIP</span><span class="what"><span lang="en">Freelance · Short-form campaign</span><span lang="ko">프리랜스 · 숏폼 캠페인</span></span><span class="go">→</span></a>
+        </li>
+        <li>
+          <a class="row" href="#p-moodit"><span class="when mono">2022.12 – 2023.12</span><span class="co">MOODIT</span><span class="what"><span lang="en">Founding team · Branding, UX/UI</span><span lang="ko">창업팀 · 브랜딩, UX/UI</span></span><span class="go">→</span></a>
+        </li>
+        <li>
+          <a class="row" href="#p-tutto"><span class="when mono">—</span><span class="co"><span lang="en">Projects</span><span lang="ko">프로젝트</span></span><span class="what"><span lang="en">Brand identity, editorial, video, UX</span><span lang="ko">브랜드 아이덴티티, 출판, 영상, UX</span></span><span class="go">→</span></a>
+          <div class="subs"><a href="#p-tutto"><span class="n">08</span><span lang="en">tutto</span><span lang="ko">tutto</span></a><a href="#other"><span class="n">09</span><span lang="en">Other work</span><span lang="ko">기타 작업</span></a><a href="#photography"><span class="n">10</span><span lang="en">Photography</span><span lang="ko">사진</span></a></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div id="details">
+<!-- ================= 01 GF FASHION ================= -->
+<section class="block case" id="p-gf">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">01</span></div>
+      <h2>GF Fashion</h2>
+      <div class="brandtags"><span>C.P. Company</span><span>Palm Angels</span><span>BEAMS KOREA</span></div>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2025.03 – 2026.08</dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Marketer</span><span lang="ko">마케터</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Scope</span><span lang="ko">범위</span></dt><dd><span lang="en">HQ liaison, celebrity seeding, ambassador, CRM, media, events, collaborations</span><span lang="ko">본사 소통, 연예인 협찬, 앰버서더, CRM, 매체 광고, 행사, 콜라보</span></dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">개요</span></h4>
+      <p><span lang="en">Marketing in Korea for three international labels handled by GF Fashion: C.P. Company, Palm Angels and BEAMS.</span><span lang="ko">GF Fashion이 국내 전개하는 해외 브랜드 C.P. Company, Palm Angels, BEAMS의 국내 마케팅 담당.</span></p>
+
+      <h3 class="brand-h">C.P. Company</h3>
+      <h4><span lang="en">Key projects</span><span lang="ko">주요 프로젝트</span></h4>
+      <div class="proj">
+        <div class="proj-row"><span class="when mono">2025.10.31 – 11.09</span><div><b><span lang="en">“The Science of Colours: Inside Garment Dyeing” pop-up</span><span lang="ko">가먼트 다잉 이벤트 “The Science of Colours: Inside Garment Dyeing”</span></b><p><span lang="en">Pop-up at Lotte Avenuel Jamsil (B1). Garment-dyeing workshop led by a dyeing specialist (Oct 31 – Nov 1), lens and goggle engraving, 25FW and Korea-exclusive D.D. Shell items, and a Seoul-limited T-shirt. My role: produced the pop-up-exclusive T-shirt and ran VIP invitations.</span><span lang="ko">롯데백화점 잠실 에비뉴엘 B1 팝업. 염색 전문가와 함께하는 가먼트 다잉 워크숍(10.31–11.1), 렌즈·고글 각인 서비스, 25FW 및 한국 한정 D.D. Shell 제품, 서울 한정 티셔츠 판매. 팝업 한정 티셔츠 제작 및 VIP 초청 담당.</span></p><div class="imgs c3 press"><img src="https://www.fashionbiz.co.kr/images/etcImg/1762305714774-C.P%20Company%20%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20(4)%20(1).jpg" alt="C.P. Company garment dyeing pop-up (Fashionbiz)" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://www.fashionbiz.co.kr/images/etcImg/1762305715127-C.P%20Company%20%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20(3)%20(1).jpg" alt="C.P. Company garment dyeing pop-up (Fashionbiz)" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://www.fashionbiz.co.kr/images/etcImg/1762305702068-C.P%20Company%20%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20(1)%20(1).jpg" alt="C.P. Company garment dyeing pop-up (Fashionbiz)" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div></div></div>
+        <div class="proj-row"><span class="when mono">2025 F/W</span><div><b><span lang="en">D.D. Shell Korea Exclusive viral campaign</span><span lang="ko">D.D. Shell 코리아 익스클루시브 바이럴</span></b><p><span lang="en">Viral marketing for the Korea-only D.D. Shell outerwear line; the 25FW line sold out.</span><span lang="ko">한국 한정 D.D. Shell 아우터 라인 바이럴 마케팅, 25FW 솔드아웃 달성.</span></p></div></div>
+        <div class="proj-row"><span class="when mono">2026.02 –</span><div><b><span lang="en">RIIZE Sohee, first Korea ambassador</span><span lang="ko">라이즈 소희, 첫 코리아 앰버서더</span></b><p><span lang="en">Ran the ambassador program: two DAZED Korea cover shoots (2026 Spring Edition and 2026 Summer Edition #2) and a store visit.</span><span lang="ko">앰버서더 프로그램 진행: 데이즈드 코리아 커버 화보 2회(2026 봄호, 2026 여름호 #2) 및 매장 방문.</span></p></div></div>
+        <div class="proj-row"><span class="when mono">2025 – 2026</span><div><b><span lang="en">Collaboration launches in Korea</span><span lang="ko">콜라보레이션 국내 전개</span></b><p><span lang="en">Our Legacy Work Shop (FW25, Nov 2025) · Alessi (Apr 2026, Milan Design Week) · Junya Watanabe MAN (Apr 2025, Goggle Vest and Oxford Nylon Parka)</span><span lang="ko">Our Legacy Work Shop (FW25, 2025.11) · Alessi (2026.04, 밀라노 디자인 위크) · Junya Watanabe MAN (2025.04, 고글 베스트·옥스퍼드 나일론 파카)</span></p></div></div>
+      </div>
+      <h4><span lang="en">Ongoing</span><span lang="ko">상시 업무</span></h4>
+      <ul>
+        <li><span lang="en">Communication with the Italian headquarters</span><span lang="ko">이탈리아 본사 커뮤니케이션</span></li>
+        <li><span lang="en">Celebrity seeding</span><span lang="ko">연예인 협찬</span></li>
+        <li><span lang="en">Celebrity and influencer PR</span><span lang="ko">연예인·인플루언서 PR</span></li>
+        <li><span lang="en">Brand KakaoTalk messages (CRM)</span><span lang="ko">브랜드 카카오톡 메시지 (CRM)</span></li>
+        <li><span lang="en">Creative production and distribution for press and media advertising</span><span lang="ko">언론사·매체 광고 소재 제작 및 배포</span></li>
+        <li><span lang="en">Annual brand event</span><span lang="ko">연 1회 브랜드 행사</span></li>
+        <li><span lang="en">Ambassador marketing</span><span lang="ko">앰버서더 마케팅</span></li>
+      </ul>
+      <p class="cap mono muted" style="margin-top:28px"><span lang="en">Brand KakaoTalk messages and social model cuts · scroll →</span><span lang="ko">브랜드 카카오톡 메시지 및 SNS 모델컷 · 옆으로 넘기기 →</span></p>
+      <div class="imgs wide">
+        <img src="images/cp-kakao-1.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+        <img src="images/cp-kakao-2.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+        <img src="images/cp-kakao-3.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+        <img src="images/cp-kakao-4.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+        <img src="images/cp-kakao-5.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+        <img src="images/cp-kakao-6.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+        <img src="images/cp-kakao-7.jpg" alt="Brand KakaoTalk messages and social model cuts" loading="lazy">
+      </div>
+
+      <h3 class="brand-h">BEAMS KOREA</h3>
+      <div class="proj">
+        <div class="proj-row"><span class="when mono">2025.04.04 – 05.08</span><div><b><span lang="en">BEAMS pop-up, Lotte Avenuel Jamsil</span><span lang="ko">BEAMS 팝업스토어, 롯데백화점 잠실 에비뉴엘</span></b><p><span lang="en">BEAMS' first official pop-up in Korea: BEAMS, BEAMS BOY and Ray BEAMS, BEAMS SEOUL limited-edition collaborations, and a Japanese artist signing and workshop.</span><span lang="ko">BEAMS의 국내 첫 공식 팝업. BEAMS, BEAMS BOY, Ray BEAMS, BEAMS SEOUL 한정 협업 제품, 일본 아티스트 사인회 및 워크숍.</span></p><p><b style="font-weight:600"><span lang="en">My role:</span><span lang="ko">담당:</span></b> <span lang="en">planning, marketing creative, HQ communication and on-site pop-up operations; produced the pop-up stickers.</span><span lang="ko">기획, 마케팅 소재 제작, 본사 커뮤니케이션, 팝업 현장 운영, 팝업 스티커 제작.</span></p>
+<div class="imgs c3 press"><img src="https://img.vogue.co.kr/vogue/2025/03/style_67e4d39e5cc19.jpg" alt="BEAMS Seoul pop-up (Vogue Korea)" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://img.vogue.co.kr/vogue/2025/03/style_67e4d3a53e5ad.jpg" alt="BEAMS Seoul pop-up (Vogue Korea)" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://tnnews.co.kr/wp-content/uploads/2025/04/KakaoTalk_20250404_164133597-2.jpg" alt="BEAMS pop-up opening (TNNews)" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+<p class="links" style="margin-top:10px"><span class="muted"><span lang="en">Press:</span><span lang="ko">관련 기사:</span></span> <a href="https://www.vogue.co.kr/2025/03/27/%EB%B9%94%EC%8A%A4-%EC%84%9C%EC%9A%B8-%EC%B2%AB-%ED%8C%9D%EC%97%85-%EC%8A%A4%ED%86%A0%EC%96%B4-%EC%97%B0%EB%8B%A4/" target="_blank" rel="noopener">Vogue Korea ↗</a> <a href="https://tnnews.co.kr/archives/230347" target="_blank" rel="noopener">TNNews ↗</a></p></div></div>
+      </div>
+
+      <h3 class="brand-h">Palm Angels</h3>
+      <h4><span lang="en">Ongoing</span><span lang="ko">상시 업무</span></h4>
+      <ul>
+        <li><span lang="en">Communication with headquarters</span><span lang="ko">본사 커뮤니케이션</span></li>
+        <li><span lang="en">Celebrity seeding</span><span lang="ko">연예인 협찬</span></li>
+        <li><span lang="en">Celebrity and influencer PR</span><span lang="ko">연예인·인플루언서 PR</span></li>
+        <li><span lang="en">Brand KakaoTalk messages (CRM)</span><span lang="ko">브랜드 카카오톡 메시지 (CRM)</span></li>
+        <li><span lang="en">Creative production and distribution for press and media advertising</span><span lang="ko">언론사·매체 광고 소재 제작 및 배포</span></li>
+      </ul>
+
+      <h3 class="brand-h">COEVO <span class="muted" style="font-weight:400;font-size:15px"><span lang="en">select shop</span><span lang="ko">편집숍</span></span></h3>
+      <ul>
+        <li><span lang="en">Ad creative production for the COEVO select shop</span><span lang="ko">편집숍 COEVO 광고 소재 제작</span></li>
+      </ul>
+      <p class="cap mono muted" style="margin-top:28px"><span lang="en">COEVO ad creative (KakaoTalk) · scroll →</span><span lang="ko">COEVO 광고 소재 (카카오톡) · 옆으로 넘기기 →</span></p>
+      <div class="imgs wide">
+        <img src="images/coevo-kakao-1.jpg" alt="COEVO ad creative (KakaoTalk)" loading="lazy">
+        <img src="images/coevo-kakao-2.jpg" alt="COEVO ad creative (KakaoTalk)" loading="lazy">
+        <img src="images/coevo-kakao-3.jpg" alt="COEVO ad creative (KakaoTalk)" loading="lazy">
+      </div>
+
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">Ran C.P. Company's first official ambassador campaign in Korea: brand awareness up 40x on the previous baseline.</span><span lang="ko">C.P. Company 브랜드 첫 공식 앰버서더 캠페인 진행, 브랜드 인지도 기존 대비 40배 증가.</span></p>
+      <p class="outcome" style="margin-top:10px"><span lang="en">BEAMS KOREA pop-up at Lotte World Mall Jamsil: the highest visitor count of any pop-up at the venue, with the sales target met.</span><span lang="ko">BEAMS KOREA 팝업, 잠실 롯데월드몰 역대 팝업 중 최다 방문객 기록 및 목표 매출 달성.</span></p>
+      <p class="outcome" style="margin-top:10px"><span lang="en">C.P. Company 25FW D.D. Shell Korea Exclusive: sold out after the viral campaign.</span><span lang="ko">C.P. Company 25FW D.D. Shell 코리아 익스클루시브 바이럴 진행, 솔드아웃 달성.</span></p>
+      <div class="imgs c3 media" data-media="p-gf">
+        <img src="images/gf-01.jpg" alt="C.P. Company pop-up, The Science of Colours" loading="lazy">
+        <img src="images/gf-02.jpg" alt="C.P. Company pop-up, archive jacket display" loading="lazy">
+        <img src="images/gf-03.jpg" alt="C.P. Company pop-up, garment dyeing demonstration" loading="lazy">
+        <img src="images/gf-04.jpg" alt="BEAMS SEOUL pop-up" loading="lazy">
+        <img src="images/gf-05.jpg" alt="BEAMS SEOUL pop-up storefront" loading="lazy">
+        <img src="images/gf-06.jpg" alt="BEAMS SEOUL pop-up opening" loading="lazy">
+        <img src="images/gf-07.jpg" alt="BEAMS SEOUL pop-up key visual" loading="lazy">
+        <img src="images/gf-08.jpg" alt="BEAMS SEOUL pop-up campaign" loading="lazy">
+        <img src="images/gf-09.jpg" alt="C.P. Company ambassador SOHEE, Dazed Korea" loading="lazy">
+        <img src="images/gf-10.jpg" alt="C.P. Company ambassador SOHEE, Dazed Korea" loading="lazy">
+        <img src="images/gf-11.jpg" alt="C.P. Company ambassador SOHEE, Dazed Korea" loading="lazy">
+        <img src="images/gf-12.jpg" alt="C.P. Company ambassador SOHEE, eyesmag" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 BOOK FAIR ================= -->
+<section class="block case" id="p-fair">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">02</span></div>
+      <h2><span lang="en">AROUND at Seoul International Book Fair</span><span lang="ko">AROUND 서울국제도서전 부스</span></h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Client</span><span lang="ko">브랜드</span></dt><dd><span lang="en">AROUND (lifestyle magazine)</span><span lang="ko">AROUND (라이프스타일 매거진)</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2024.06.26 – 2024.06.30</dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Planning, operations</span><span lang="ko">기획, 운영</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Type</span><span lang="ko">유형</span></dt><dd><span lang="en">Offline activation</span><span lang="ko">오프라인 이벤트</span></dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">목표</span></h4>
+      <p><span lang="en">Raise brand awareness and acquire new online subscribers at the Seoul International Book Fair.</span><span lang="ko">서울국제도서전에서 브랜드 노출 및 신규 온라인 구독자 확보.</span></p>
+      <h4><span lang="en">What I did</span><span lang="ko">주요 업무</span></h4>
+      <ul>
+        <li><span lang="en">Planned booth concept, layout and on-site subscription offer</span><span lang="ko">부스 콘셉트, 공간 구성, 현장 구독 혜택 기획</span></li>
+        <li><span lang="en">Managed schedule, installation, operation and teardown</span><span lang="ko">일정, 설치, 현장 운영, 철거 총괄</span></li>
+        <li><span lang="en">Scoped workload to the team's capacity: the company previously ran one offline event per year</span><span lang="ko">연 1회였던 오프라인 이벤트를 추가 진행하며 팀 리소스에 맞춰 업무 범위 조정</span></li>
+      </ul>
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">New subscriptions equal to 120% of the existing base. Revenue since running at 200% of prior levels. 4 of 6 annual KPIs achieved.</span><span lang="ko">기존 구독자 대비 120% 신규 구독. 이후 매출 기존 대비 200%. 연간 KPI 6개 중 4개 달성.</span></p>
+      <p class="links" style="margin-top:14px"><a href="https://www.instagram.com/p/C8ooQzevx1Y/" target="_blank" rel="noopener">Instagram ↗</a></p>
+      <div class="imgs c3">
+        <img src="images/bookfair-1.jpg" alt="AROUND book fair booth" loading="lazy">
+        <img src="images/bookfair-2.jpg" alt="AROUND book fair booth" loading="lazy">
+        <img src="images/bookfair-3.jpg" alt="AROUND book fair booth" loading="lazy">
+        <img src="images/bookfair-4.jpg" alt="AROUND book fair booth" loading="lazy">
+        <img src="images/bookfair-5.jpg" alt="AROUND book fair booth" loading="lazy">
+        <img src="images/bookfair-6.jpg" alt="AROUND book fair booth" loading="lazy">
+      </div>
+      <div class="imgs c3 media" data-media="p-fair"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 STUDIO ================= -->
+<section class="block case" id="p-studio">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">03</span></div>
+      <h2><span lang="en">Discovery Tales Studio</span><span lang="ko">작업실 발견담</span></h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Client</span><span lang="ko">브랜드</span></dt><dd>AROUND</dd></div>
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2024.03 – 2024.08</dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Planning, operations</span><span lang="ko">기획, 운영</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Type</span><span lang="ko">유형</span></dt><dd><span lang="en">Retail space, new revenue stream</span><span lang="ko">공간, 신규 수익 모델</span></dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">목표</span></h4>
+      <p><span lang="en">Open a paid offline workspace that creates a new revenue stream and lets visitors experience the brand first-hand.</span><span lang="ko">유료 오프라인 작업실을 열어 신규 수익원을 만들고, 방문객이 브랜드를 직접 경험하도록 함.</span></p>
+      <h4><span lang="en">What I did</span><span lang="ko">주요 업무</span></h4>
+      <ul>
+        <li><span lang="en">Defined the space concept, content program, layout and visitor flow over the two months before opening</span><span lang="ko">오픈 전 두 달간 공간 콘셉트, 콘텐츠, 공간 구성, 방문 동선 기획</span></li>
+        <li><span lang="en">Delivered alongside existing workload within regular hours</span><span lang="ko">기존 업무와 병행해 정규 근무시간 내 진행</span></li>
+        <li><span lang="en">Linked visits to magazine subscriptions as a secondary revenue path</span><span lang="ko">방문 이후 매거진 구독으로 이어지는 부가 수익 구조 설계</span></li>
+      </ul>
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">Profitable from month two, with recurring monthly revenue. Still in operation.</span><span lang="ko">운영 2개월 차 흑자 전환, 매달 고정 수익 발생. 현재도 운영 중.</span></p>
+      <p class="links" style="margin-top:14px"><a href="https://a-round.kr/intro240425/" target="_blank" rel="noopener">a-round.kr ↗</a></p>
+      <div class="imgs c5">
+        <img src="images/around-studio-1.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-2.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-3.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-4.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-5.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-6.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-7.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-8.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-9.jpg" alt="Discovery Tales studio" loading="lazy">
+        <img src="images/around-studio-10.jpg" alt="Discovery Tales studio" loading="lazy">
+      </div>
+      <div class="imgs c3 media" data-media="p-studio"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 SOCIAL ================= -->
+<section class="block case" id="p-social">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">04</span></div>
+      <h2><span lang="en">Social &amp; Reels</span><span lang="ko">SNS·릴스</span></h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Client</span><span lang="ko">브랜드</span></dt><dd>AROUND</dd></div>
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2024.01 – 2024.08</dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Brand outreach, shooting, editing</span><span lang="ko">브랜드 컨택, 촬영, 편집</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Channel</span><span lang="ko">채널</span></dt><dd>Instagram</dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">목표</span></h4>
+      <p><span lang="en">Grow a magazine account that the usual brand-social playbook wasn't growing.</span><span lang="ko">일반적인 브랜드 SNS 운영 방식으로는 성장하지 않던 매거진 계정 성장.</span></p>
+      <h4><span lang="en">What I did</span><span lang="ko">주요 업무</span></h4>
+      <ul>
+        <li><span lang="en">Shifted to interactive formats and events built around followers' interests: film, books, brand collaborations</span><span lang="ko">팔로워 관심사(영화, 도서, 브랜드 협업) 중심의 참여형 콘텐츠·이벤트로 전환</span></li>
+        <li><span lang="en">Introduced Reels to the account; sourced brand partners, shot and edited</span><span lang="ko">계정에 릴스를 처음 도입하고 협업 브랜드 섭외, 촬영, 편집 담당</span></li>
+        <li><span lang="en">Split copy and design with the editorial and design teams</span><span lang="ko">텍스트는 에디터, 디자인은 디자이너와 분담해 제작</span></li>
+      </ul>
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">Reach +40% beyond existing followers. Followers +400%.</span><span lang="ko">팔로워 외 도달 40% 증가, 팔로워 400% 증가.</span></p>
+      <div class="links" style="margin-top:14px">
+        <a href="https://www.instagram.com/reel/C5R-mzgPXMs/" target="_blank" rel="noopener">Reel — Choi Kang-hee ↗</a>
+        <a href="https://www.instagram.com/reel/C52V0dRRK-F/" target="_blank" rel="noopener">Reel — Hideko ↗</a>
+        <a href="https://www.instagram.com/reel/C_Mcm27sofr/" target="_blank" rel="noopener">What's AROUND — Collins ↗</a>
+        <a href="https://www.instagram.com/reel/C_1vsIjs7ur/" target="_blank" rel="noopener">What's AROUND — havehad ↗</a>
+      </div>
+      <div class="imgs c3 media" data-media="p-social"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 NEWSLETTER ================= -->
+<section class="block case" id="p-news">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">05</span></div>
+      <h2><span lang="en">Newsletter</span><span lang="ko">뉴스레터</span></h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Client</span><span lang="ko">브랜드</span></dt><dd>AROUND</dd></div>
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2024.01 – 2024.08</dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Planning and publishing, Vol.49–64</span><span lang="ko">Vol.49–64 기획 및 발행</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Channel</span><span lang="ko">채널</span></dt><dd>Email (Stibee)</dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">목표</span></h4>
+      <p><span lang="en">Two audiences: give subscribers behind-the-scenes content and perks; give non-subscribers a sample of the magazine that leads to a subscription.</span><span lang="ko">구독자에게는 비하인드와 구독 혜택을, 비구독자에게는 콘텐츠 체험과 구독 유도를 제공.</span></p>
+      <h4><span lang="en">What I did</span><span lang="ko">주요 업무</span></h4>
+      <ul>
+        <li><span lang="en">Owned topic selection, structure, promo placement and layout for 16 issues</span><span lang="ko">16호 동안 주제 선정, 구성, 프로모션 배치, 디자인 구성 담당</span></li>
+        <li><span lang="en">Prioritised content quality over hard-sell promotion to build long-term conversion</span><span lang="ko">단기 판매보다 콘텐츠 완성도에 집중해 장기 전환 유도</span></li>
+      </ul>
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">Subscribers +30%. Click-through rate 4.8% against a 3.3% industry average.</span><span lang="ko">구독자 30% 증가. 클릭률 4.8% (업계 평균 3.3%).</span></p>
+      <div class="links" style="margin-top:14px">
+        <a href="https://stibee.com/api/v1.0/emails/share/Jt7mdtadNGJnuzDvZCiFcQbN_K-AaYY" target="_blank" rel="noopener">Vol.63 ↗</a>
+        <a href="https://stibee.com/api/v1.0/emails/share/zUp_JDfXNUs9IGTD_me-qOW8s4-zmu4" target="_blank" rel="noopener">Vol.57 ↗</a>
+        <a href="https://stibee.com/api/v1.0/emails/share/vkF16WWqvkXR5w_67XhTVSLsQll0DbA" target="_blank" rel="noopener">Vol.48 ↗</a>
+      </div>
+      <div class="imgs c3 media" data-media="p-news"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 YULIP ================= -->
+<section class="block case" id="p-yulip">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">06</span></div>
+      <h2><span lang="en">YULIP short-form campaign</span><span lang="ko">YULIP 숏폼 캠페인</span></h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Client</span><span lang="ko">브랜드</span></dt><dd><span lang="en">YULIP (beauty, early-stage)</span><span lang="ko">YULIP (초기 뷰티 브랜드)</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2023.09 – 2023.12</dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Project lead, shooting, editing (freelance)</span><span lang="ko">프로젝트 매니저, 촬영, 편집 (프리랜스)</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Channel</span><span lang="ko">채널</span></dt><dd>Instagram Reels</dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">목표</span></h4>
+      <p><span lang="en">Drive awareness and site traffic among Gen Z and young millennials through short-form video.</span><span lang="ko">숏폼 영상으로 MZ세대 대상 브랜드 인지도와 웹사이트 유입 확대.</span></p>
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">4,402 total views. 30% view-to-site conversion, about 1,200 new site visits.</span><span lang="ko">총 조회수 4,402회. 웹사이트 방문 전환율 30% (약 1,200회 방문).</span></p>
+      <p class="links" style="margin-top:14px"><a href="https://yulipbeauty.co.kr/" target="_blank" rel="noopener">yulipbeauty.co.kr ↗</a></p>
+      <div class="imgs c3 media" data-media="p-yulip">
+        <video src="videos/yulip-1.mp4" controls playsinline preload="metadata"></video>
+        <video src="videos/yulip-2.mp4" controls playsinline preload="metadata"></video>
+        <video src="videos/yulip-3.mp4" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 MOODIT ================= -->
+<section class="block case" id="p-moodit">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">07</span></div>
+      <h2>MOODIT</h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Period</span><span lang="ko">기간</span></dt><dd>2022.12 – 2023.12</dd></div>
+        <div><dt class="mono muted"><span lang="en">Type</span><span lang="ko">유형</span></dt><dd><span lang="en">Photo booth startup, co-founding team</span><span lang="ko">포토부스 스타트업 (창업팀)</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Revenue model, branding, UX/UI, user testing</span><span lang="ko">수익 모델, 브랜딩, UX/UI, 사용자 테스트</span></dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">목표</span></h4>
+      <p><span lang="en">Build a mood-driven photo booth brand for young adults, from business model to the in-booth experience.</span><span lang="ko">20대를 겨냥한 분위기 중심 포토부스 브랜드를 수익 모델부터 부스 경험까지 구축.</span></p>
+      <h4><span lang="en">What I did</span><span lang="ko">주요 업무</span></h4>
+      <ul>
+        <li><span lang="en">Built the revenue model and pitched to VCs</span><span lang="ko">수익 모델 수립 및 VC 미팅</span></li>
+        <li><span lang="en">Designed brand identity, booth UX/UI and ran user tests</span><span lang="ko">브랜드 아이덴티티, 부스 UX/UI 디자인, 사용자 테스트</span></li>
+      </ul>
+      <h4><span lang="en">Outcome</span><span lang="ko">성과</span></h4>
+      <p class="outcome"><span lang="en">Secured investment and opened the first store near Konkuk University Station, Seoul.</span><span lang="ko">투자 유치 후 건대입구 1호점 오픈.</span></p>
+      <p class="links" style="margin-top:14px"><a href="https://moodit.co.kr/" target="_blank" rel="noopener">moodit.co.kr ↗</a></p>
+      <div class="imgs c3">
+        <img src="images/moodit-1.jpg" alt="MOODIT" loading="lazy">
+        <img src="images/moodit-2.jpg" alt="MOODIT" loading="lazy">
+        <img src="images/moodit-3.jpg" alt="MOODIT" loading="lazy">
+        <img src="images/moodit-4.jpg" alt="MOODIT" loading="lazy">
+        <img src="images/moodit-5.jpg" alt="MOODIT" loading="lazy">
+        <img src="images/moodit-6.jpg" alt="MOODIT" loading="lazy">
+      </div>
+      <div class="imgs c3 media" data-media="p-moodit"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 TUTTO ================= -->
+<section class="block case" id="p-tutto">
+  <div class="grid">
+    <div class="label">
+      <div class="head"><span class="n">08</span></div>
+      <h2>tutto</h2>
+      <dl class="meta">
+        <div><dt class="mono muted"><span lang="en">Type</span><span lang="ko">유형</span></dt><dd><span lang="en">Brand identity for a concept studio (team project)</span><span lang="ko">가상 크리에이티브 스튜디오 브랜딩 (팀 프로젝트)</span></dd></div>
+        <div><dt class="mono muted"><span lang="en">Role</span><span lang="ko">역할</span></dt><dd><span lang="en">Project manager</span><span lang="ko">프로젝트 매니저</span></dd></div>
+      </dl>
+    </div>
+    <div class="body text">
+      <h4><span lang="en">Brief</span><span lang="ko">개요</span></h4>
+      <p><span lang="en">A creative studio that uses the chair as its medium for archiving, curation and exhibitions.</span><span lang="ko">의자를 매체로 아카이빙, 큐레이션, 전시를 하는 크리에이티브 스튜디오.</span></p>
+      <h4><span lang="en">Contribution</span><span lang="ko">기여도</span></h4>
+      <ul>
+        <li><span lang="en">Identity planning — 90%</span><span lang="ko">아이덴티티 기획 90%</span></li>
+        <li><span lang="en">Brand definition and direction — 90%</span><span lang="ko">브랜드 정의 및 방향성 90%</span></li>
+        <li><span lang="en">Logo design — 50%</span><span lang="ko">로고 디자인 50%</span></li>
+        <li><span lang="en">Brand guidelines — 50%</span><span lang="ko">브랜드 가이드라인 50%</span></li>
+        <li><span lang="en">Mockups — 20%</span><span lang="ko">목업 20%</span></li>
+      </ul>
+      <p class="links" style="margin-top:14px"><a href="https://www.behance.net/gallery/173706723/tutto" target="_blank" rel="noopener">Behance ↗</a></p>
+      <div class="imgs c3 land">
+        <img src="images/tutto-1.jpg" alt="tutto key visual" loading="lazy">
+        <img src="images/tutto-2.jpg" alt="tutto archive" loading="lazy">
+        <img src="images/tutto-3.jpg" alt="tutto logo system" loading="lazy">
+      </div>
+      <div class="imgs c3 media" data-media="p-tutto"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OTHER WORK ================= -->
+<section class="block" id="other">
+  <div class="grid">
+    <p class="label mono"><span lang="en">09 — Other work</span><span lang="ko">09 — 기타 작업</span></p>
+    <div class="body">
+      <ul class="other">
+        <li>
+          <h3>Vol.4</h3>
+          <p><span lang="en">Two-in-one book with exposed binding: “Letters” and Olafur Eliasson. Research and writing.</span><span lang="ko">‘Letters’와 올라퍼 엘리아슨을 다룬 두 권을 노출 제본으로 엮은 책. 자료 조사 및 글 작성.</span></p>
+          <p class="mono muted"><span lang="en">Editorial</span><span lang="ko">출판</span></p>
+          <div class="imgs media" data-media="other-vol4">
+            <img src="images/vol4d-1.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4d-2.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4d-3.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4d-4.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4d-5.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4d-6.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-01.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-02.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-03.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-04.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-05.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-06.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-07.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-08.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-09.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-10.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-11.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-12.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-13.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-14.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-15.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-16.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-17.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-18.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-19.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-20.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-21.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-22.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-23.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-24.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-25.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-26.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-27.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-28.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-29.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-30.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-31.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-32.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-33.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-34.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-35.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-36.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-37.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-38.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-39.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-40.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-41.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-42.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-43.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-44.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-45.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-46.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-47.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-48.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-49.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-50.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-51.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-52.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-53.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-54.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-55.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-56.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-57.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-58.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-59.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-60.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-61.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-62.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-63.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-64.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-65.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-66.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-67.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-68.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-69.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-70.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-71.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-72.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-73.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-74.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-75.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-76.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-77.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-78.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-79.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-80.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-81.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-82.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-83.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-84.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-85.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-86.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-87.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-88.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-89.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-90.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-91.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-92.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-93.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-94.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-95.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-96.jpg" alt="Vol.4" loading="lazy">
+            <img src="images/vol4p-97.jpg" alt="Vol.4" loading="lazy">
+          </div>
+        </li>
+        <li>
+          <h3>UNITWIN NGET Archive</h3>
+          <p><span lang="en">Program record for UNITWIN's NGET overseas program: journal and film. Photo, video, colour grading, writing.</span><span lang="ko">UNITWIN NGET 해외 프로그램 기록 저널과 영상. 사진·영상 촬영, 보정, 글 작성. <a href="https://www.youtube.com/watch?v=VM18QIyZcDU" target="_blank" rel="noopener">영상 ↗</a></span><a lang="en" href="https://www.youtube.com/watch?v=VM18QIyZcDU" target="_blank" rel="noopener"> Film ↗</a></p>
+          <p class="mono muted"><span lang="en">Editorial, video</span><span lang="ko">출판, 영상</span></p>
+          <div class="imgs media" data-media="other-unitwin">
+            <img src="images/nget-01.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-02.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-03.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-04.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-05.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-06.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-07.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-08.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-09.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-10.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-11.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-12.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-13.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-14.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-15.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-16.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-17.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-18.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-19.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-20.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-21.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-22.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-23.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-24.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-25.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-26.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-27.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-28.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-29.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-30.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-31.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-32.jpg" alt="NGET PNG Journal" loading="lazy">
+            <img src="images/nget-33.jpg" alt="NGET PNG Journal" loading="lazy">
+          </div>
+        </li>
+        <li>
+          <h3><span lang="en">Handong Univ. ambassador vlogs</span><span lang="ko">한동대 홍보대사 브이로그</span></h3>
+          <p><span lang="en">Planned, filmed, presented and edited a vlog series and rebranded the channel. +500 subscribers from four episodes; +100 admissions live-stream viewers year on year.</span><span lang="ko">브이로그 시리즈 기획, 촬영, 출연, 편집 및 채널 리브랜딩. 영상 4편으로 구독자 500명 증가, 입시 라이브 참여자 전년 대비 100명 증가.</span></p>
+          <p class="mono muted"><span lang="en">Video</span><span lang="ko">영상</span></p>
+          <div class="imgs media" data-media="other-hgu"></div>
+        </li>
+        <li>
+          <h3>Take Your Time</h3>
+          <p><span lang="en">App concept focused on interaction design. Planning and design.</span><span lang="ko">인터랙션 디자인 중심 앱 콘셉트. 기획 및 디자인.</span></p>
+          <p class="mono muted">UX / UI</p>
+          <div class="imgs media" data-media="other-tyt">
+            <video src="videos/tyt-1.mp4" controls playsinline preload="metadata"></video>
+            <img src="images/tyt-1.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-2.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-3.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-4.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-5.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-6.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-7.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-8.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+            <img src="images/tyt-9.jpg" alt="Take Your Time (ProtoPie)" loading="lazy">
+          </div>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ================= PHOTOGRAPHY ================= -->
+<section class="block" id="photography">
+  <div class="grid">
+    <p class="label mono"><span lang="en">10 — Photography</span><span lang="ko">10 — 사진</span></p>
+    <div class="body">
+      <p class="cap mono muted" style="margin-bottom:14px"><span lang="en">Scroll →</span><span lang="ko">옆으로 넘기기 →</span></p>
+      <div class="photos">
+        <figure><img src="images/photo-d01.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d02.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d03.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d04.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d05.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d06.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d07.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d08.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d09.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d10.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d11.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d12.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d13.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d14.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d15.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d16.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d17.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d18.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d19.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d20.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d21.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d22.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d23.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d24.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d25.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d26.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d27.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d28.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d29.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d30.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d31.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d32.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d33.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d34.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d35.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d36.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d37.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d38.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d39.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d40.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d41.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d42.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d43.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d44.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d45.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d46.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d47.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d48.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d49.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d50.jpg" alt="Photography" loading="lazy"></figure>
+        <figure><img src="images/photo-d51.jpg" alt="Photography" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /details -->
+
+<!-- ================= CONTACT ================= -->
+<section class="block contact" id="contact">
+  <div class="grid">
+    <p class="label mono"><span lang="en">Contact</span><span lang="ko">연락처</span></p>
+    <div class="body">
+      <dl>
+        <div><dt class="mono muted">Email</dt><dd><a href="mailto:qkrgkals0309@naver.com">qkrgkals0309@naver.com</a></dd></div>
+        <div><dt class="mono muted"><span lang="en">Phone</span><span lang="ko">전화</span></dt><dd><a href="tel:+821059240359"><span lang="en">+82 10 5924 0359</span><span lang="ko">010-5924-0359</span></a></dd></div>
+        <div><dt class="mono muted">Instagram</dt><dd><a href="https://www.instagram.com/vit___hamin/" target="_blank" rel="noopener">@vit___hamin</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 상세 내역 미니 목차 -->
+<aside class="toc" id="toc" aria-label="Contents">
+  <p class="mono muted"><span lang="en">Details</span><span lang="ko">상세 내역</span></p>
+  <ol>
+    <li><a href="#p-gf"><span class="n">01</span><span>GF Fashion</span></a></li>
+    <li><a href="#p-fair"><span class="n">02</span><span lang="en">Book fair</span><span lang="ko">도서전</span></a></li>
+    <li><a href="#p-studio"><span class="n">03</span><span lang="en">Discovery Tales</span><span lang="ko">발견담</span></a></li>
+    <li><a href="#p-social"><span class="n">04</span><span lang="en">Social</span><span lang="ko">SNS</span></a></li>
+    <li><a href="#p-news"><span class="n">05</span><span lang="en">Newsletter</span><span lang="ko">뉴스레터</span></a></li>
+    <li><a href="#p-yulip"><span class="n">06</span><span>YULIP</span></a></li>
+    <li><a href="#p-moodit"><span class="n">07</span><span>MOODIT</span></a></li>
+    <li><a href="#p-tutto"><span class="n">08</span><span>tutto</span></a></li>
+    <li><a href="#other"><span class="n">09</span><span lang="en">Other</span><span lang="ko">기타</span></a></li>
+    <li><a href="#photography"><span class="n">10</span><span lang="en">Photo</span><span lang="ko">사진</span></a></li>
+  </ol>
+  <a class="totop mono" href="#overview">↑ <span lang="en">Overview</span><span lang="ko">요약</span></a>
+</aside>
+
+
+<footer class="mono muted"><span>© 2026 Hamin Park</span><a href="#top" style="text-decoration:none">↑ <span lang="en">Top</span><span lang="ko">맨 위로</span></a></footer>
+
+<div class="ed-bar" id="edbar">
+  <button type="button" class="primary" id="ed-toggle">Edit</button>
+  <button type="button" class="x" id="ed-save">Save HTML</button>
+  <button type="button" class="x" id="ed-reset">Reset</button>
+  <button type="button" class="x" id="ed-old" hidden>Save old draft</button>
+</div>
+<div class="ed-hint" id="edhint"><span lang="en">Click any text to edit. To paste: click an image, slot or dotted area, then press Ctrl/Cmd+V. Or drag an image file onto a photo or empty slot to replace it, or onto the gap of an image grid to add one. Each project (except YULIP) has a drop area for your own images or video; video files go in a videos/ folder next to index.html. Hover a photo and press × to remove it. Drafts are kept in this browser; press Save HTML to download the final file.</span><span lang="ko">글자를 눌러 바로 수정하세요. 붙여넣기: 사진·빈 칸·점선 칸을 한 번 클릭한 뒤 Ctrl/Cmd+V. 또는 이미지 파일을 사진이나 빈 칸 위로 끌어오면 교체되고, 이미지 묶음의 빈 곳에 놓으면 추가됩니다. YULIP을 제외한 각 프로젝트 하단의 점선 칸에 이미지나 영상을 끌어다 놓으면 추가됩니다(영상 파일은 index.html 옆 videos 폴더에 넣어 올려주세요). 사진에 마우스를 올려 ×를 누르면 삭제됩니다. 작업 내용은 이 브라우저에 임시 저장되며, Save HTML을 누르면 최종 파일이 내려받아집니다.</span></div>
+
+<div class="lb" id="lb" aria-hidden="true"><img alt=""></div>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.lang button');
+  function setLang(l){
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set)})});
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  setLang(saved==='ko'?'ko':'en');
+
+  // GF Fashion slots: images/gf-N.jpg shows up automatically once the file exists
+  document.querySelectorAll('.slot[data-src]').forEach(function(s){
+    var im=new Image();
+    im.onload=function(){s.style.backgroundImage='url("'+s.dataset.src+'")';s.classList.add('filled');s.style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight};
+    im.src=s.dataset.src;
+  });
+
+  // size each image/video by its natural ratio so rows keep reading order and nothing is cropped
+  var BASE=230;
+  function fit(el){ return;
+    var w=el.naturalWidth||el.videoWidth, h=el.naturalHeight||el.videoHeight; if(!w||!h)return;
+    var box=el.closest('.ed-wrap')||el.closest('figure')||el; if(!box.parentNode||!box.parentNode.matches('.imgs:not(.wide):not(.land)'))return;
+    var r=w/h; box.style.flex=r+' 1 '+Math.round(r*BASE)+'px';
+  }
+  function fitAll(root){(root||document).querySelectorAll('.imgs:not(.wide):not(.land) img,.imgs:not(.wide):not(.land) video').forEach(function(el){
+    if(el.complete&&el.naturalWidth)fit(el); el.addEventListener('load',function(){fit(el)}); el.addEventListener('loadedmetadata',function(){fit(el)});
+  })}
+  fitAll();
+  new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){ if(n.matches('img,video'))fitAll(n.parentNode); else fitAll(n);} })})}).observe(document.getElementById('content'),{childList:true,subtree:true});
+
+  // drag galleries sideways with the mouse (touch already swipes natively)
+  (function(){ var sc=null,x0=0,l0=0,moved=false;
+    document.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse'||e.button!==0||document.body.classList.contains('editing'))return;
+      var t=e.target.closest('.imgs,.photos'); if(!t||t.scrollWidth<=t.clientWidth)return; sc=t;x0=e.clientX;l0=t.scrollLeft;moved=false; });
+    document.addEventListener('pointermove',function(e){ if(!sc)return; var dx=e.clientX-x0;
+      if(!moved&&Math.abs(dx)>5){moved=true;sc.classList.add('dragging');}
+      if(moved){sc.scrollLeft=l0-dx;e.preventDefault();} });
+    function end(){ if(!sc)return; sc.classList.remove('dragging'); if(moved){var c=function(ev){ev.stopPropagation();ev.preventDefault();};document.addEventListener('click',c,true);setTimeout(function(){document.removeEventListener('click',c,true)},0);} sc=null; }
+    document.addEventListener('pointerup',end); document.addEventListener('pointercancel',end);
+    document.addEventListener('dragstart',function(e){ if(!document.body.classList.contains('editing')&&e.target.closest&&e.target.closest('.imgs,.photos'))e.preventDefault(); });
+  })();
+  // lightbox
+  var lb=document.getElementById('lb'), lbi=lb.querySelector('img');
+  document.querySelectorAll('.imgs img,.photos img').forEach(function(im){im.addEventListener('click',function(){if(document.body.classList.contains('editing'))return;lbi.src=im.src;lb.classList.add('on')})});
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+
+  // mini table of contents: visible while the details are on screen, highlights the current section
+  var toc=document.getElementById('toc'), det=document.getElementById('details');
+  if(toc&&det&&'IntersectionObserver' in window){
+    var links={}; toc.querySelectorAll('ol a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+    new IntersectionObserver(function(es){es.forEach(function(e){toc.classList.toggle('show',e.isIntersecting)})},{rootMargin:'-45% 0px -45% 0px'}).observe(det);
+    // the highlighted entry is the section at the top of the screen (just under the sticky header)
+    var secs=[].slice.call(det.querySelectorAll('section[id]')), hdr=document.querySelector('.top'), cur=null, tick=false;
+    function spy(){ tick=false; var line=(hdr?hdr.getBoundingClientRect().bottom:0)+24, id=secs[0]&&secs[0].id;
+      secs.forEach(function(sec){ if(sec.getBoundingClientRect().top<=line) id=sec.id; });
+      if(id!==cur){ cur=id; Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===id)}); } }
+    window.addEventListener('scroll',function(){ if(!tick){tick=true;requestAnimationFrame(spy);} },{passive:true});
+    window.addEventListener('resize',spy); spy();
+  }
+
+  // ---------- owner edit mode ----------
+  // The Edit button only appears when the page is opened with ?edit (e.g. index.html?edit).
+  // Edits never change the published site for visitors; they stay in this browser until you
+  // press "Save HTML" and upload the downloaded file to GitHub yourself.
+  var EDIT=/[?&]edit\b/.test(location.search)||location.hash==='#edit';
+  window.addEventListener('hashchange',function(){ if((location.hash==='#edit')!==EDIT) location.reload(); });
+  if(EDIT){
+    document.body.classList.add('ed-on');
+    var content=document.getElementById('content'), KEY='portfolio-draft-v3', editing=false;
+    var TEXT='h1,h2,h3,h4,p,li,dd,dt,.brandtags span,.index li a>span:not(.n)';
+    // BUILD changes whenever Claude republishes the page. A draft made on an older build is not applied
+    // (it would hide the new content); the "Old draft" button saves it as a file so it can be merged.
+    var BUILD='2026-10-12a', oldDraft=null;
+    try{var d=localStorage.getItem(KEY), db=localStorage.getItem(KEY+'-build');
+      if(d&&db===BUILD) content.innerHTML=d; else if(d) oldDraft=d;}catch(e){}
+    function saveDraft(){try{localStorage.setItem(KEY,clean(content.cloneNode(true)).innerHTML);localStorage.setItem(KEY+'-build',BUILD)}catch(e){toast('Draft too large for browser storage. Use "Save HTML" now so nothing is lost.')}}
+    function shrink(file,cb){
+      var r=new FileReader(); r.onload=function(){
+        var im=new Image(); im.onload=function(){
+          var m=1600,w=im.naturalWidth,h=im.naturalHeight,k=Math.min(1,m/Math.max(w,h));
+          var c=document.createElement('canvas'); c.width=Math.round(w*k); c.height=Math.round(h*k);
+          c.getContext('2d').drawImage(im,0,0,c.width,c.height); cb(c.toDataURL('image/jpeg',.82));
+        }; im.src=r.result;
+      }; r.readAsDataURL(file);
+    }
+    function imageFile(e){var f=e.dataTransfer&&e.dataTransfer.files[0]; return f&&/^image\//.test(f.type)?f:null}
+    function videoFile(e){var f=e.dataTransfer&&e.dataTransfer.files[0]; return f&&/^video\//.test(f.type)?f:null}
+    // videos are too large to embed: the page points at videos/<file name>, so put that file in a videos/ folder next to index.html
+    function clean(root){root.querySelectorAll('video[data-file]').forEach(function(v){v.setAttribute('src',v.dataset.file)}); return root}
+    function wrap(img){
+      if(!img.parentNode||img.parentNode.classList.contains('ed-wrap'))return;
+      var w=document.createElement('span'); w.className='ed-wrap'; w.style.display='block';
+      img.parentNode.insertBefore(w,img); w.appendChild(img);
+      var b=document.createElement('button'); b.type='button'; b.className='ed-del'; b.textContent='×';
+      b.onclick=function(ev){ev.stopPropagation(); var t=w.closest('figure')||w; t.remove(); saveDraft();};
+      w.appendChild(b);
+    }
+    function unwrapAll(root){root.querySelectorAll('.ed-wrap').forEach(function(w){var img=w.querySelector('img,video'); if(img) w.parentNode.insertBefore(img,w); w.remove();});}
+    function setEditing(on){
+      editing=on; document.body.classList.toggle('editing',on);
+      document.getElementById('ed-toggle').textContent=on?'Done':'Edit';
+      content.querySelectorAll(TEXT).forEach(function(el){ if(on) el.setAttribute('contenteditable','true'); else el.removeAttribute('contenteditable'); });
+      if(on) content.querySelectorAll('.imgs img,.imgs video,.photos img,.photo img').forEach(wrap); else { unwrapAll(content); saveDraft(); }
+    }
+    document.getElementById('ed-toggle').onclick=function(){setEditing(!editing)};
+    content.addEventListener('input',function(){if(editing)saveDraft()});
+    content.addEventListener('click',function(e){ if(editing&&e.target.closest('a')) e.preventDefault(); },true);
+    content.addEventListener('dragover',function(e){ if(!editing)return; e.preventDefault(); var t=e.target.closest('img,.slot,.imgs,.photos'); content.querySelectorAll('.dropping').forEach(function(x){x.classList.remove('dropping')}); if(t)t.classList.add('dropping'); });
+    content.addEventListener('dragleave',function(e){ var t=e.target.closest&&e.target.closest('.dropping'); if(t)t.classList.remove('dropping'); });
+    function toast(msg){var t=document.getElementById('ed-toast'); if(!t){t=document.createElement('div'); t.id='ed-toast'; document.body.appendChild(t);} t.textContent=msg; t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove('on')},4000);}
+    // put a dropped or pasted file where `el` points: an image (replace), an empty slot, or an image grid (add)
+    function place(f,el){
+      var img=el&&el.closest('img'), slot=el&&el.closest('.slot'), grid=el&&el.closest('.imgs,.photos');
+      if(/^video\//.test(f.type)){
+        if(!grid){toast('Drop or paste a video into an image grid or a dotted drop area.');return;}
+        var name=f.name||('video-'+Date.now()+'.mp4');
+        var v=document.createElement('video'); v.controls=true; v.muted=true; v.playsInline=true; v.preload='metadata';
+        v.dataset.file='videos/'+name; v.src=URL.createObjectURL(f);
+        var vt=img&&img.closest('.ed-wrap'); if(vt) grid.insertBefore(v,vt.nextSibling); else grid.appendChild(v);
+        wrap(v); saveDraft();
+        toast('Video added. Put "'+name+'" in a videos folder next to index.html when you upload.');
+        return;
+      }
+      if(!/^image\//.test(f.type))return;
+      if(!img&&!slot&&!grid){toast('Click an image, slot or dotted drop area first, then paste.');return;}
+      shrink(f,function(url){
+        if(img){ img.src=url; }
+        else if(slot){ slot.style.backgroundImage='url("'+url+'")'; slot.classList.add('filled'); slot.removeAttribute('data-src'); var r=new Image(); r.onload=function(){slot.style.aspectRatio=r.naturalWidth+'/'+r.naturalHeight; saveDraft();}; r.src=url; }
+        else {
+          var n=document.createElement('img'); n.src=url; n.alt=''; n.loading='lazy';
+          if(grid.classList.contains('photos')){var fg=document.createElement('figure'); fg.appendChild(n); grid.appendChild(fg);} else grid.appendChild(n);
+          wrap(n); n.addEventListener('click',function(){if(!editing){lbi.src=n.src;lb.classList.add('on')}});
+        }
+        saveDraft(); toast('Image added.');
+      });
+    }
+    content.addEventListener('drop',function(e){
+      if(!editing)return; e.preventDefault();
+      content.querySelectorAll('.dropping').forEach(function(x){x.classList.remove('dropping')});
+      var f=e.dataTransfer&&e.dataTransfer.files[0]; if(f) place(f,e.target);
+    });
+    // paste: click an image, slot or drop area to choose where the image goes, then press Ctrl/Cmd+V
+    var pasteAt=null;
+    content.addEventListener('click',function(e){
+      if(!editing)return;
+      var t=e.target.closest('img,video,.slot,.imgs,.photos'); if(!t)return;
+      if(pasteAt)pasteAt.classList.remove('paste-at');
+      pasteAt=t.matches('img,video')?t.closest('.ed-wrap')||t:t; pasteAt.classList.add('paste-at');
+    });
+    document.addEventListener('paste',function(e){
+      if(!editing||!e.clipboardData)return;
+      var items=e.clipboardData.files&&e.clipboardData.files.length?e.clipboardData.files:null, f=items&&items[0];
+      if(!f){var it=[].slice.call(e.clipboardData.items||[]).filter(function(i){return i.kind==='file'})[0]; f=it&&it.getAsFile();}
+      if(!f)return;
+      e.preventDefault();
+      var el=pasteAt; if(el&&el.classList.contains('ed-wrap'))el=el.querySelector('img,video');
+      place(f,el);
+    });
+    var dlP=null; try{if(window.claude&&window.claude.use)dlP=window.claude.use('downloads')}catch(err){}
+    function exportHtml(draftHTML,name){
+      var doc=document.documentElement.cloneNode(true);
+      if(draftHTML!=null) doc.querySelector('#content').innerHTML=draftHTML;
+      clean(doc); doc.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable')});
+      doc.querySelectorAll('.dropping,.paste-at').forEach(function(el){el.classList.remove('dropping','paste-at')});
+      var t=doc.querySelector('#ed-toast'); if(t)t.remove();
+      unwrapAll(doc);
+      var b=doc.querySelector('body'); b.classList.remove('editing','ed-on');
+      if(!b.className) b.removeAttribute('class');
+      var html='<!doctype html>\n'+doc.outerHTML;
+      if(dlP){ dlP.then(function(dl){ if(!dl){toast('Saving is not available in this view. Open index.html#edit from the downloaded folder instead.');return;}
+        dl.save({filename:name,data:html}).then(function(){toast('Saved '+name+'.')},function(err){ if(err&&err.code!=='declined')toast('Could not save here ('+(err&&err.code)+').'); }); }); return; }
+      var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([html],{type:'text/html'})); a.download=name; a.click();
+      setTimeout(function(){URL.revokeObjectURL(a.href)},2000);
+    }
+    document.getElementById('ed-save').onclick=function(){exportHtml(null,'index.html')};
+    var oldBtn=document.getElementById('ed-old');
+    if(oldDraft){ oldBtn.hidden=false; oldBtn.onclick=function(){exportHtml(oldDraft,'index-old-draft.html')};
+      setTimeout(function(){toast('This page was updated. Your earlier edits are kept: press "Save old draft" and send that file to Claude to merge them.')},300); }
+    var resetArmed=false;
+    document.getElementById('ed-reset').onclick=function(){
+      if(!resetArmed){resetArmed=true; this.textContent='Click again to reset'; var me=this; setTimeout(function(){resetArmed=false; me.textContent='Reset'},4000); return;}
+      try{localStorage.removeItem(KEY)}catch(e){} location.reload();
+    };
+  }
+})();
+</script>
+</body>
+</html>
